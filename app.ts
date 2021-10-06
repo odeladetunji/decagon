@@ -25,7 +25,7 @@ app.use(cors());
 app.get('/fetchToken', cors(corsOptions), (request: any, response: any) => {
     let identity: String = cryptograph.randomBytes(20).toString('hex');
     let generatedToken = jwt.sign(identity, process.env.ACCESS_TOKEN_KEY);
-    localstore.setItem(generatedToken, 5)
+    localstore.setItem(generatedToken, 10)
     return response.send(generatedToken);
 });
 
